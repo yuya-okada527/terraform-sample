@@ -1,4 +1,10 @@
 {
   "editor.tabSize": 2,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "plantuml.server": "http://localhost:8080",
+  "plantuml.render": "PlantUMLServer",
+  "coverage-status.searchPatterns": [
+    "api/coverage/.resultset.json",
+    "api/coverage/lcov*.info"
+  ]
 }
