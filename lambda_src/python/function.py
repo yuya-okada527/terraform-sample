@@ -1,4 +1,4 @@
-def handler(event):
+def handler(event, context):
   return {
     "result": "ok"
   }

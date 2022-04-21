@@ -10,3 +10,5 @@
 
 # zipファイル
 lambda/*.zip
+
+tmp/

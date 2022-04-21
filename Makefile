@@ -7,6 +7,6 @@ plan:
 apply:
 	terraform apply -auto-approve
 invoke_lambda:
-	aws lambda invoke --function-name local-lambda --endpoint-url=http://localhost:4566 a.log
+	aws lambda invoke --function-name local-lambda --endpoint-url=http://localhost:4566 tmp/lambda.json
 list_functions:
 	aws lambda list-functions --endpoint-url=http://localhost:4566
