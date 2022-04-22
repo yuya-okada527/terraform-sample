@@ -1,0 +1,16 @@
+@startuml patch
+
+participant ClouwWatchEvent
+participant OuterSQS
+participant OuterLambda
+participant InnerSQS
+participant InnerLambda
+
+ClouwWatchEvent -> OuterSQS: cron実行
+OuterSQS -> OuterLambda: 全体の処理を実行
+loop
+  OuterLambda -> InnerSQS: パラメータを分割キューイング
+  InnerSQS -> InnerLambda: 分割パラメータを実行
+end
+
+@enduml
