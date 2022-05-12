@@ -9,7 +9,7 @@ services:
       - "127.0.0.1:4566:4566"
       - "127.0.0.1:4571:4571"
     environment:
-      - SERVICES=lambda,sqs,iam
+      - SERVICES=lambda,sqs,iam,s3
       - DEBUG=${DEBUG- }
       - DATA_DIR=${DATA_DIR- }
       - LAMBDA_EXECUTOR=docker

@@ -40,14 +40,19 @@ data "aws_iam_policy_document" "iam_policy_document" {
 
 }
 
-resource "aws_sqs_queue" "inner_sqs" {
-  name                        = "inner_sqs.fifo"
-  fifo_queue                  = true
-  content_based_deduplication = true
-  policy = data.aws_iam_policy_document.iam_policy_document.json
-}
+# resource "aws_sqs_queue" "inner_sqs" {
+#   name                        = "inner_sqs.fifo"
+#   fifo_queue                  = true
+#   content_based_deduplication = true
+#   policy = data.aws_iam_policy_document.iam_policy_document.json
+# }
 
-resource "aws_lambda_event_source_mapping" "inner_mapping" {
-  event_source_arn = aws_sqs_queue.inner_sqs.arn
-  function_name    = aws_lambda_function.inner_lambda.arn
+# resource "aws_lambda_event_source_mapping" "inner_mapping" {
+#   event_source_arn = aws_sqs_queue.inner_sqs.arn
+#   function_name    = aws_lambda_function.inner_lambda.arn
+# }
+
+resource "aws_s3_bucket" "bucket1" {
+  bucket = "sample-bucket"
+  acl = "private"
 }
